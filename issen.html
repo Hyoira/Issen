@@ -337,7 +337,7 @@ function updatePlayer(dt) {
     if (state === 'title' && !startRing.hit && distSeg(startRing.x, startRing.y, px, py, P.x, P.y) < (startRing.r + P.r) * U) slashStart();
     if (k >= 1) endDash();
   }
-  if (!P.dashing && P.recover <= 0 && P.buffer) { const b = P.buffer; P.buffer = null; startDash(b.x, b.y); }
+  if (P.alive && !P.dashing && P.recover <= 0 && P.buffer) { const b = P.buffer; P.buffer = null; startDash(b.x, b.y); }
 }
 
 // ---------- kills ----------
@@ -419,7 +419,7 @@ function goTitle() {
   startRing.hit = false; startTimer = -1; titleFade = 0;
 }
 function die(e) {
-  P.alive = false; P.dashing = false; state = 'dying'; dieT = 0;
+  P.alive = false; P.dashing = false; P.buffer = null; state = 'dying'; dieT = 0;
   hitstop = 0.16; slow(1.2, 0.16); addTrauma(1);
   if (!RM) { flash = 1; flashCol = C.ink; }
   for (let i = 0; i < 16; i++) {

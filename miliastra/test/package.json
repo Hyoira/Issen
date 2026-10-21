@@ -1,0 +1,10 @@
+{
+  "name": "issen-lua-test",
+  "private": true,
+  "scripts": {
+    "test": "node run.js ../lua/Issen/Main.lua 20000"
+  },
+  "dependencies": {
+    "fengari": "0.1.4"
+  }
+}

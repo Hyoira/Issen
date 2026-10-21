@@ -1,0 +1,61 @@
+﻿テキストマッピングID,翻訳が必要かどうか,日本語,英語
+issen.color.ink,TRUE,墨,Ink
+issen.element.pyro,TRUE,炎,Pyro
+issen.element.hydro,TRUE,水,Hydro
+issen.element.cryo,TRUE,氷,Cryo
+issen.element.electro,TRUE,雷,Electro
+issen.element.anemo,TRUE,風,Anemo
+issen.element.geo,TRUE,岩,Geo
+issen.element.dendro,TRUE,草,Dendro
+issen.elementColor,TRUE,%s元素,%s
+issen.mission.score,TRUE,1回で %s 点,Score %s in one run
+issen.mission.combo,TRUE,コンボ %s,Reach a %s combo
+issen.mission.multi,TRUE,1回のダッシュで %s 体,Slash %s in one dash
+issen.mission.chain,TRUE,誘爆で %s 体 (1回で),Blast %s with chain explosions in one run
+issen.mission.close,TRUE,紙一重 %s 回 (1回で),%s close calls in one run
+issen.mission.kills,TRUE,今日 合計 %s 体,Slash %s today
+issen.mission.runs,TRUE,今日 %s 回挑戦,Play %s runs today
+issen.missionDone,TRUE,ミッション達成  %s,Mission complete  %s
+issen.multiSlash,TRUE,%s 斬,%s SLASH
+issen.closeCall,TRUE,紙一重,Close call
+issen.startRing,TRUE,斬って開始,Slash to start
+issen.tagline,TRUE,タップした場所へ一瞬で斬り抜ける,Slash through to wherever you tap
+issen.soundOn,TRUE,音 ON,Sound ON
+issen.soundOff,TRUE,音 OFF,Sound OFF
+issen.pause,TRUE,中断,Pause
+issen.paused,TRUE,中断中,Paused
+issen.pausedNote,TRUE,タイトルへ戻ると、このプレイは記録されません,Going back to the title discards this run
+issen.resume,TRUE,続ける,Resume
+issen.resumePad,TRUE,A  続ける,A  Resume
+issen.toTitle,TRUE,タイトルへ,Title
+issen.toTitlePad,TRUE,B  タイトルへ,B  Title
+issen.firstHint,TRUE,タップした場所へ斬り抜ける,Tap anywhere to slash through to it
+issen.firstHintPad,TRUE,スティックで狙って A で斬り抜ける,"Aim with the stick, press A to slash through"
+issen.whiffHint,TRUE,空振りするとコンボが途切れて、少しのあいだ動けない,A miss breaks your combo and stalls you for a moment
+issen.done,TRUE,達成,Done
+issen.streakToday,TRUE,連続 %s 日プレイ中,%s-day streak
+issen.streakKeep,TRUE,今日遊ぶと 連続 %s 日,Play today for a %s-day streak
+issen.streakRestart,TRUE,今日から連続記録をもう一度,Start a new streak today
+issen.resetIn,TRUE,更新まで %s,Resets in %s
+issen.todaysMissions,TRUE,今日のミッション,Today's missions
+issen.exitStage,TRUE,ステージを終了,Leave stage
+issen.exitConfirm,TRUE,もう一度押すと終了,Press again to leave
+issen.exiting,TRUE,ステージを終了しています,Leaving the stage
+issen.exitFailed,TRUE,ステージを終了できませんでした,Couldn't leave the stage
+issen.unlockAt,TRUE,Lv %s で解放,Unlocks at Lv %s
+issen.newBest,TRUE,自己ベスト更新  +%s,New best  +%s
+issen.firstRecord,TRUE,初記録,First score
+issen.toBest,TRUE,ベストまで あと %s 点,%s points to your best
+issen.statCombo,TRUE,最大コンボ,Max combo
+issen.statKills,TRUE,撃破,Slashed
+issen.statMulti,TRUE,最大同時斬り,Best multi-slash
+issen.streakBonus,TRUE,連続 %s 日ボーナス ×%s,%s-day streak ×%s
+issen.allDailies,TRUE,デイリー全達成 +%s,All dailies done +%s
+issen.gotElement,TRUE,%s元素の色を手に入れた,Unlocked the %s color
+issen.nextElement,TRUE,次の%s元素まで あと %s XP,Next: %s in %s XP
+issen.again,TRUE,タップでもう一度,Tap to play again
+issen.againPad,TRUE,A でもう一度,A  Play again
+issen.hintTitle,TRUE,A 斬る   RB 元素を変える   X 音   B ステージを終了,A Slash   RB Element   X Sound   B Leave stage
+issen.hintPlay,TRUE,左スティック 狙う   A 斬る   B 中断,L-stick Aim   A Slash   B Pause
+issen.hintPaused,TRUE,A 続ける   B タイトルへ,A Resume   B Title
+issen.loading,TRUE,読み込み中,Loading

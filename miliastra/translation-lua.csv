@@ -59,3 +59,8 @@ issen.hintTitle,TRUE,A 斬る   RB 元素を変える   X 音   B ステージ�
 issen.hintPlay,TRUE,左スティック 狙う   A 斬る   B 中断,L-stick Aim   A Slash   B Pause
 issen.hintPaused,TRUE,A 続ける   B タイトルへ,A Resume   B Title
 issen.loading,TRUE,読み込み中,Loading
+issen.action.slash,TRUE,斬る,Slash
+issen.action.aim,TRUE,左スティックで狙う,L-stick to aim
+issen.action.color,TRUE,元素を変える,Element
+issen.action.sound,TRUE,音,Sound
+issen.action.again,TRUE,もう一度,Play again

@@ -66,6 +66,11 @@ local SOURCES = {
   ["hintPlay"] = "左スティック 狙う   A 斬る   B 中断",
   ["hintPaused"] = "A 続ける   B タイトルへ",
   ["loading"] = "読み込み中",
+  ["action.slash"] = "斬る",
+  ["action.aim"] = "左スティックで狙う",
+  ["action.color"] = "元素を変える",
+  ["action.sound"] = "音",
+  ["action.again"] = "もう一度",
 }
 local TR = {}
 -- GetText returns the ID itself when no Script Text Variable exists, so the source text stands in.
@@ -130,7 +135,7 @@ local SFX_NAMES = { "DASH", "KILL1", "KILL2", "KILL3", "KILL4", "KILL5", "WHIFF"
 -- Packed as an Integer List (SAVE_LEN) and persisted by the server through In-game Save.
 local SAVE_LEN = 24
 local function defaultSave()
-  return { best = 0, xp = 0, kills = 0, runs = 0, maxCombo = 0, color = 0, streak = 0, lastDay = 0, mute = false, mDay = 0, mp = { 0, 0, 0 }, md = { 0, 0, 0 }, maxStreak = 0 }
+  return { best = 0, xp = 0, kills = 0, runs = 0, maxCombo = 0, color = 0, streak = 0, lastDay = 0, mute = false, mDay = 0, mp = { 0, 0, 0 }, md = { 0, 0, 0 }, maxStreak = 0, closeCalls = 0 }
 end
 local save = defaultSave()
 local function unpackSave(a)
@@ -142,12 +147,13 @@ local function unpackSave(a)
   s.mp = { n(12), n(13), n(14) }
   s.md = { n(15), n(16), n(17) }
   s.maxStreak = n(18)
+  s.closeCalls = n(19)
   return s
 end
 local function packSave()
   local s = save
   local a = { 1, s.best, s.xp, s.kills, s.runs, s.maxCombo, s.color, s.streak, s.lastDay, s.mute and 1 or 0, s.mDay,
-    s.mp[1], s.mp[2], s.mp[3], s.md[1], s.md[2], s.md[3], s.maxStreak }
+    s.mp[1], s.mp[2], s.mp[3], s.md[1], s.md[2], s.md[3], s.maxStreak, s.closeCalls }
   for i = 1, SAVE_LEN do a[i] = toint(a[i]) end
   return a
 end
@@ -252,10 +258,11 @@ local world -- layer that shakes (set by buildLayers)
 -- ---------- world state ----------
 local state = "boot" -- boot | title | play | dying | over
 local P = { x = 0, y = 0, r = 1.9, dashing = false, fx = 0, fy = 0, tx = 0, ty = 0, t = 0, dur = 0, dirx = 0, diry = 1,
-  hits = 0, recover = 0, grace = 0, buffer = nil, land = 0, alive = true }
+  hits = 0, recover = 0, grace = 0, buffer = nil, land = 0, landT = 0, alive = true }
 local E, FX, WAVES, TXT, TRAIL, BOMBS, TOASTS = {}, {}, {}, {}, {}, {}, {}
 local EFX, BOLTS = {}, {} -- element hit effects
-local function newRun() return { score = 0, combo = 0, maxCombo = 0, kills = 0, maxMulti = 0, chain = 0, close = 0, time = 0, spawnT = 0.7, newDone = {}, lastX = 0, lastY = 0 } end
+local function newRun() return { score = 0, combo = 0, maxCombo = 0, kills = 0, maxMulti = 0, chain = 0, close = 0, time = 0,
+  difficultyTime = min(max(lvInfo(save.xp) - 1, 0) * 0.5, 10), spawnT = 0.7, newDone = {}, lastX = 0, lastY = 0 } end
 local run = newRun()
 local hitstop, trauma, kickX, kickY, slowT, slowScale, ts, flash = 0, 0, 0, 0, 0, 1, 1, 0
 local flashCol = INK
@@ -372,7 +379,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     local base = kind == "dot" and 19 or kind == "bomb" and 7 or 9
     E[#E + 1] = { x = x, y = y, vx = 0, vy = 0, kind = kind, dead = false, born = 0, ph = rnd() * TAU,
       r = kind == "dot" and 1.5 or kind == "bomb" and 2.6 or 2.4,
-      spd = (base + min(run.time, 120) * 0.09) * (0.9 + rnd() * 0.2) }
+      spd = (base + min(run.difficultyTime, 300) * 0.09) * (0.9 + rnd() * 0.2) }
   end
   local function spawnGroup()
     local px, py = edgePoint()
@@ -382,7 +389,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     if k < 0.45 then
       local n = rnd(3, 5)
       for i = 0, n - 1 do local o = (i - (n - 1) / 2) * 5.5 * U; spawnEnemy("ring", px + nx * o, py + ny * o) end
-    elseif k < 0.8 and run.time > 8 then
+    elseif k < 0.8 and run.difficultyTime > 8 then
       spawnEnemy("bomb", px, py)
       for i = 0, 4 do local a = i / 5 * TAU; spawnEnemy("ring", px + cos(a) * 6.5 * U, py + sin(a) * 6.5 * U) end
     else
@@ -392,7 +399,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
   local function spawnTick(dt)
     run.spawnT = run.spawnT - dt
     if run.spawnT > 0 or #E > 42 then return end
-    local t = run.time
+    local t = run.difficultyTime
     run.spawnT = max(0.32, 1.2 - t * 0.013) * (0.7 + rnd() * 0.6)
     if t > 5 and rnd() < 0.2 then return spawnGroup() end
     local x, y = edgePoint()
@@ -425,7 +432,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
   local kill -- forward
 
   local function endDash()
-    P.dashing, P.grace, P.land = false, 0.07, 1
+    P.dashing, P.grace, P.land, P.landT = false, 0.07, 1, 0
     kick(P.dirx, P.diry, 0.6 * U)
     if state ~= "play" then return end
     if P.hits == 0 then
@@ -457,6 +464,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     if P.recover > 0 then P.recover = P.recover - dt end
     if P.grace > 0 then P.grace = P.grace - dt end
     P.land = P.land * 0.0008 ^ dt
+    P.landT = P.landT + dt
     if P.dashing then
       local px, py = P.x, P.y
       P.t = P.t + dt
@@ -546,7 +554,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
   end
   function restart()
     FX, TRAIL, TXT = {}, {}, {}
-    P.x, P.y, P.dashing, P.land = W / 2, H / 2, false, 1
+    P.x, P.y, P.dashing, P.land, P.landT = W / 2, H / 2, false, 1, 0
     wave(P.x, P.y, 0, 20 * U, 0.4, acc())
     play("UI")
     beginPlay()
@@ -605,10 +613,14 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     save.maxStreak = max(save.maxStreak, save.streak)
     save.runs = save.runs + 1
     save.kills = save.kills + run.kills
+    save.closeCalls = save.closeCalls + run.close
     save.maxCombo = max(save.maxCombo, run.maxCombo)
     local prevBest = save.best
     local newBest = run.score > prevBest and run.score > 0
-    if newBest then save.best = run.score end
+    if newBest then
+      save.best = run.score
+      sendSignal("issen_best", { save.best })
+    end
     local newDone = {}
     for _, i in ipairs(run.newDone) do newDone[#newDone + 1] = i end
     for i = 1, 3 do
@@ -628,7 +640,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     end
     persist()
     -- Achievements only ever go up, so send lifetime values.
-    sendSignal("issen_run", { run.score, save.best, save.maxCombo, save.maxStreak, lv1, save.kills })
+    sendSignal("issen_run", { run.score, save.best, save.maxCombo, save.maxStreak, lv1, save.kills, save.closeCalls })
     res = { score = run.score, prevBest = prevBest, newBest = newBest, maxCombo = run.maxCombo, kills = run.kills, maxMulti = run.maxMulti,
       gain = gain, xp0 = xp0, xp1 = save.xp, newDone = newDone, allBonus = allBonus, streakMult = streakMult, unlocked = unlocked,
       shownLv = lv0, lvFlash = 0, bestShown = false }
@@ -649,7 +661,11 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
   end
 
   local function sim(dt)
-    if state == "play" then run.time = run.time + dt; spawnTick(dt) end
+    if state == "play" then
+      run.time = run.time + dt
+      run.difficultyTime = run.difficultyTime + dt
+      spawnTick(dt)
+    end
     updatePlayer(dt)
     if state == "play" or state == "dying" then
       for _, e in ipairs(E) do
@@ -911,6 +927,7 @@ local buildLayers, render, readPad, bindInput
     newPool("uiRing", "ring", root)
     newPool("uiIcon", "dot", root)
     newPool("uiText", "text", root, textSetup)
+    if TPL.btn then newPool("keyHint", "btn", root) end
     newPool("toast", "text", root, textSetup)
     newPool("flash", "rect", root)
     prewarm(L.eRing, 30); prewarm(L.fx, 40); prewarm(L.trail, 20); prewarm(L.halfRing, 16); prewarm(L.wText, 8)
@@ -1011,7 +1028,15 @@ local buildLayers, render, readPad, bindInput
       end
       local r = P.r * U
       local sx, sy = 1, 1
-      if P.dashing then sx, sy = 1.8, 0.6 else sx, sy = 1 - 0.3 * P.land, 1 + 0.3 * P.land end
+      if P.dashing then
+        local k = min(1, P.t / P.dur)
+        sx = 1.25 + 0.9 * sin(k * math.pi)
+        sy = 1 / sx
+      else
+        -- Compress on arrival, then rebound with a damped wobble.
+        sx = 1 - 0.42 * P.land * cos(P.landT * 26)
+        sy = 1 / sx
+      end
       local br = (state == "title" and not P.dashing) and 1 + sin(clock * 4) * 0.05 or 1
       local rot = atan(P.diry, P.dirx) * DEG
       img(P.recover > 0 and "pRing" or "pDot", P.x, P.y, r * 2 * sx * br, r * 2 * sy * br, rot, acc(), 1)
@@ -1029,24 +1054,51 @@ local buildLayers, render, readPad, bindInput
     if fw > 0.5 then img("uiRect", x + fw / 2, y, fw, h, 0, rgb, a) end
   end
 
+  local function keyLabel(str, key, x, y, size, rgb, a)
+    local tw = size * (ems(str) + 1)
+    if padMode and key and TPL.btn then
+      local s = nextSprite(L.keyHint)
+      s.c:SetSizeDelta(size * 1.8, size * 1.8)
+      s.c:SetAnchoredPosition(x - tw / 2, y)
+      if s.key ~= key then
+        s.c.controllerKeyCode = key
+        s.c.keyboardKeyCode = Enum.KeyboardKeyCode.None
+        s.key = key
+      end
+      x = x + size * 1.1
+    end
+    text("uiText", str, x, y, size, rgb, a)
+  end
+
   local function drawMute(a)
     local s, x, y = fsz(1.9, 13), W - max(16, 3 * U), H - max(22, 4 * U)
     local str = save.mute and tr("soundOff") or tr("soundOn")
-    text("hudText", str, x, y, s, MUTE, a or 1, 1)
-    UI.mute = { x = x - s * 4.5, y = y - s, w = s * 4.5 + 12, h = s * 2 }
+    local w = s * (ems(str) + 1 + ((padMode and TPL.btn) and 2.2 or 0))
+    keyLabel(str, Enum.ControllerKeyCode.InteractKey, x - w / 2, y, s, MUTE, a or 1)
+    UI.mute = { x = x - w - 6, y = y - s, w = w + 12, h = s * 2 }
   end
 
   -- A label on a faint plate; returns its hit rect. align -1 / 1 puts the left / right edge at x.
-  local function button(str, x, y, size, rgb, a, align)
-    local w, h = size * (ems(str) + 2), size * 2.2
+  local function button(str, x, y, size, rgb, a, align, key)
+    size = size * 1.2
+    local w, h = size * (ems(str) + 3 + ((padMode and key and TPL.btn) and 2.2 or 0)), size * 2.8
     if align then x = x - align * w / 2 end
     img("uiRect", x, y, w, h, 0, FAINT, (a or 1) * 0.9)
-    text("uiText", str, x, y, size, rgb, a or 1)
+    keyLabel(str, key, x, y, size, rgb, a or 1)
     return { x = x - w / 2, y = y - h / 2, w = w, h = h }
   end
 
-  local function hint(str)
-    if padMode then text("hudText", str, W / 2, max(14, 2.2 * U), fsz(1.6, 12), MUTE, 0.9) end
+  local function hint(items)
+    if not padMode then return end
+    local size, total = fsz(1.6, 12), 0
+    for _, item in ipairs(items) do total = total + ems(item[2]) + 2.6 + ((item[1] and TPL.btn) and 2.2 or 0) end
+    size = min(size, (W - 32) / total)
+    local x, y = (W - total * size) / 2, max(16, 2.4 * U)
+    for _, item in ipairs(items) do
+      local w = size * (ems(item[2]) + 1 + ((item[1] and TPL.btn) and 2.2 or 0))
+      keyLabel(item[2], item[1], x + w / 2, y, size, MUTE, 1)
+      x = x + w + size * 1.6
+    end
   end
 
   local function drawHUD()
@@ -1054,12 +1106,13 @@ local buildLayers, render, readPad, bindInput
     text("hudText", tostring(rint(dispScore)), m, H - m - s * 0.6, s * (1 + scorePulse * 0.12), INK, 1, -1)
     text("hudText", "BEST " .. max(save.best, run.score), m, H - m - s * 1.45, fsz(1.6, 11), MUTE, 1, -1)
     if state == "play" and not paused then
-      UI.pause = button(tr("pause"), W - max(16, 3 * U), H - max(22, 4 * U) - max(40, 6 * U), fsz(1.9, 13), { 0, 0, 0 }, 1, 1)
+      UI.pause = button(tr("pause"), W - max(16, 3 * U), H - max(22, 4 * U) - max(40, 6 * U), fsz(1.9, 13), { 0, 0, 0 }, 1, 1, Enum.ControllerKeyCode.NormalAttackKey)
     end
     if save.runs == 0 and run.time < 7 and state == "play" then
       local a = min(1, (7 - run.time) / 1.5) * 0.9
       local y = max(48, 9 * U)
-      text("hudText", padMode and tr("firstHintPad") or tr("firstHint"), W / 2, y, fsz(2, 13), MUTE, a)
+      if padMode then keyLabel(tr("action.slash"), Enum.ControllerKeyCode.JumpKey, W / 2, y, fsz(2, 13), MUTE, a)
+      else text("hudText", tr("firstHint"), W / 2, y, fsz(2, 13), MUTE, a) end
       text("hudText", tr("whiffHint"), W / 2, y - max(20, 3 * U), fsz(1.7, 12), MUTE, a)
     end
   end
@@ -1069,8 +1122,8 @@ local buildLayers, render, readPad, bindInput
     local fs = fsz(1.9, 13)
     text("uiText", tr("paused"), W / 2, H * 0.62, fsz(5, 30), INK, 1)
     text("uiText", tr("pausedNote"), W / 2, H * 0.62 - fsz(5, 30), fsz(1.6, 11), MUTE, 1)
-    UI.resume = button(padMode and tr("resumePad") or tr("resume"), W / 2, H * 0.42, fs * 1.2, INK, 1)
-    UI.quitRun = button(padMode and tr("toTitlePad") or tr("toTitle"), W / 2, H * 0.42 - fs * 3.4, fs, MUTE, 1)
+    UI.resume = button(tr("resume"), W / 2, H * 0.42, fs * 1.2, INK, 1, nil, Enum.ControllerKeyCode.JumpKey)
+    UI.quitRun = button(tr("toTitle"), W / 2, H * 0.42 - fs * 4.2, fs, MUTE, 1, nil, Enum.ControllerKeyCode.NormalAttackKey)
   end
 
   local function fmtLeft()
@@ -1141,9 +1194,10 @@ local buildLayers, render, readPad, bindInput
       text("uiText", tr("exiting"), m, H - max(22, 4 * U), fsz(1.9, 13), MUTE, a, -1)
     else
       UI.exit = button(exitArm > 0 and tr("exitConfirm") or tr("exitStage"), m, H - max(22, 4 * U), fsz(1.9, 13),
-        { 0, 0, 0 }, a, -1)
+        { 0, 0, 0 }, a, -1, Enum.ControllerKeyCode.NormalAttackKey)
     end
-    hint(tr("hintTitle"))
+    hint({ { Enum.ControllerKeyCode.JumpKey, tr("action.slash") }, { Enum.ControllerKeyCode.SprintKey, tr("action.color") },
+      { Enum.ControllerKeyCode.NormalAttackKey, tr("exitStage") } })
   end
 
   local function drawResults()
@@ -1191,10 +1245,9 @@ local buildLayers, render, readPad, bindInput
     drawMissions(x0, y, colW, fs * 1.9, res.newDone, clamp((resT - 1.2) / 0.3, 0, 1))
     local by = max(44, 8 * U)
     if resT > 0.45 then
-      text("uiText", padMode and tr("againPad") or tr("again"), W / 2, by + max(30, 5 * U), fsz(2.3, 15), INK, 0.55 + 0.45 * sin(clock * 5))
+      keyLabel(padMode and tr("action.again") or tr("again"), Enum.ControllerKeyCode.JumpKey, W / 2, by + max(42, 7 * U), fsz(2.3, 15), INK, 0.55 + 0.45 * sin(clock * 5))
       local s2 = fsz(1.9, 13)
-      text("uiText", padMode and tr("toTitlePad") or tr("toTitle"), W / 2, by - 6, s2, { 0, 0, 0 }, 1)
-      UI.toTitle = { x = W / 2 - s2 * 4, y = by - 6 - s2 * 1.4, w = s2 * 8, h = s2 * 2.8 }
+      UI.toTitle = button(tr("toTitle"), W / 2, by - 6, s2, { 0, 0, 0 }, 1, nil, Enum.ControllerKeyCode.NormalAttackKey)
     else UI.toTitle = nil end
   end
 
@@ -1223,8 +1276,13 @@ local buildLayers, render, readPad, bindInput
     if state == "title" then drawTitle() end
     if state == "play" or state == "dying" then
       drawHUD()
-      if paused then drawPause(); hint(tr("hintPaused"))
-      else hint(tr("hintPlay")) end
+      if paused then
+        drawPause()
+        hint({ { Enum.ControllerKeyCode.JumpKey, tr("resume") }, { Enum.ControllerKeyCode.NormalAttackKey, tr("toTitle") } })
+      else
+        hint({ { false, tr("action.aim") }, { Enum.ControllerKeyCode.JumpKey, tr("action.slash") },
+          { Enum.ControllerKeyCode.NormalAttackKey, tr("pause") } })
+      end
     end
     if state == "over" then drawResults() end
     if state == "boot" then text("uiText", tr("loading"), W / 2, H / 2, fsz(2, 14), MUTE, 0.6 + 0.4 * sin(clock * 4)) end
@@ -1349,6 +1407,7 @@ function OnStart()
   root = script.object
   TPL.dot, TPL.ring, TPL.rect = param("TPL_DOT"), param("TPL_RING"), param("TPL_RECT")
   TPL.text, TPL.group, TPL.input = param("TPL_TEXT"), param("TPL_GROUP"), param("TPL_INPUT")
+  TPL.btn = param("TPL_BTN")
   if not (TPL.dot or TPL.ring or TPL.rect or TPL.text or TPL.group) then
     -- No templates set: use the MiliUI Playground's built-in ones so the file previews there as is.
     -- Its one Image template gets each picture with SetImage (100002 circle, 100006 ring, 100001 square).

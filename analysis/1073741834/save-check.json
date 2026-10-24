@@ -1,0 +1,5589 @@
+{
+  "file": {
+    "path": "C:\\Users\\Hyoira\\AppData\\LocalLow\\miHoYo\\Genshin Impact\\BeyondLocal\\801397766\\Beyond_Local_Save_Level\\1073741834\\1073741834.gil",
+    "name": "1073741834.gil",
+    "size_bytes": 133425,
+    "mtime": 1792570619.1677845
+  },
+  "header": {
+    "file_type": 2,
+    "version": 1,
+    "content_length": 133401,
+    "head_magic": "0x00000326",
+    "tail_magic": "0x00000679",
+    "valid": true
+  },
+  "level_name": null,
+  "sections": {
+    "unknown_F1": {
+      "field": 1,
+      "name": "unknown_F1",
+      "wire": "varint",
+      "size": 0,
+      "value": 1073741834
+    },
+    "level_name": {
+      "field": 2,
+      "name": "level_name",
+      "wire": "message",
+      "size": 5,
+      "raw_field_count": 0,
+      "string_sample": []
+    },
+    "templates": {
+      "field": 4,
+      "name": "templates",
+      "wire": "message",
+      "size": 1473,
+      "entries": [
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324737,
+          "type_id": 1000000,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート(キャラ編集)",
+          "guid": 1090519041,
+          "type_id": 1000001,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 6,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 7,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 11,
+                "desc": "GI_MoveHead"
+              },
+              {
+                "field": 7,
+                "tag": 19,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 22,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 18,
+                "desc": "被ダメエフェクト"
+              },
+              {
+                "field": 8,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 6,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 14,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 21,
+                "desc": null
+              },
+              {
+                "field": 8,
+                "tag": 32,
+                "desc": null
+              }
+            ],
+            "bones": [
+              {
+                "key": "GI_MoveHead",
+                "label": "頭上"
+              },
+              {
+                "key": "GI_FootR",
+                "label": "右足"
+              },
+              {
+                "key": "GI_FootL",
+                "label": "左足"
+              },
+              {
+                "key": "GI_HandL",
+                "label": "左手"
+              },
+              {
+                "key": "GI_HandR",
+                "label": "右手"
+              },
+              {
+                "key": "GI_CineHead",
+                "label": "ヘッドノード、カメラ戦闘追従ポイント"
+              },
+              {
+                "key": "GI_AvatarRoot",
+                "label": "ルートノード"
+              },
+              {
+                "key": "GI_FocusAnchor",
+                "label": "投射物初期位置"
+              },
+              {
+                "key": "GI_WeaponR",
+                "label": "右手武器"
+              },
+              {
+                "key": "GI_WeaponL",
+                "label": "左手武器"
+              },
+              {
+                "key": "GI_RootNode",
+                "label": "中心原点"
+              },
+              {
+                "key": "GI_Chest",
+                "label": "胸部"
+              }
+            ]
+          }
+        }
+      ],
+      "entry_count": 2
+    },
+    "entities": {
+      "field": 5,
+      "name": "entities",
+      "wire": "message",
+      "size": 5013,
+      "entries": [
+        {
+          "name": "ステージエンティティ",
+          "guid": 1094713345,
+          "type_id": 10003004,
+          "detail": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 6,
+                "tag": 4,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 7,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324737,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート(キャラ編集)",
+          "guid": 1090519041,
+          "type_id": 1090519041,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 7,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 11,
+                "desc": "GI_MoveHead"
+              },
+              {
+                "field": 6,
+                "tag": 19,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 22,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 18,
+                "desc": "被ダメエフェクト"
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 6,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 14,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 21,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 32,
+                "desc": null
+              }
+            ],
+            "bones": [
+              {
+                "key": "GI_MoveHead",
+                "label": "頭上"
+              },
+              {
+                "key": "GI_FootR",
+                "label": "右足"
+              },
+              {
+                "key": "GI_FootL",
+                "label": "左足"
+              },
+              {
+                "key": "GI_HandL",
+                "label": "左手"
+              },
+              {
+                "key": "GI_HandR",
+                "label": "右手"
+              },
+              {
+                "key": "GI_CineHead",
+                "label": "ヘッドノード、カメラ戦闘追従ポイント"
+              },
+              {
+                "key": "GI_AvatarRoot",
+                "label": "ルートノード"
+              },
+              {
+                "key": "GI_FocusAnchor",
+                "label": "投射物初期位置"
+              },
+              {
+                "key": "GI_WeaponR",
+                "label": "右手武器"
+              },
+              {
+                "key": "GI_WeaponL",
+                "label": "左手武器"
+              },
+              {
+                "key": "GI_RootNode",
+                "label": "中心原点"
+              },
+              {
+                "key": "GI_Chest",
+                "label": "胸部"
+              }
+            ]
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324738,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324739,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324740,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324741,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324742,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324743,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324744,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "デフォルトテンプレート",
+          "guid": 1086324745,
+          "type_id": 1086324737,
+          "detail": {
+            "position": [
+              0.0,
+              2000.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "components": [
+              {
+                "field": 5,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 110,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 5,
+                "desc": null
+              },
+              {
+                "field": 5,
+                "tag": 13,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 3,
+                "desc": null
+              },
+              {
+                "field": 6,
+                "tag": 15,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 40,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 1,
+                "desc": null
+              },
+              {
+                "field": 7,
+                "tag": 3,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        }
+      ],
+      "entry_count": 11
+    },
+    "tabs": {
+      "field": 6,
+      "name": "tabs",
+      "wire": "message",
+      "size": 1678,
+      "entry_count": 0,
+      "tab_labels": []
+    },
+    "unknown_F7": {
+      "field": 7,
+      "name": "unknown_F7",
+      "wire": "message",
+      "size": 3642,
+      "raw_field_count": 1,
+      "string_sample": [
+        "地形01"
+      ]
+    },
+    "ui_controls": {
+      "field": 9,
+      "name": "ui_controls",
+      "wire": "message",
+      "size": 16475,
+      "strings": [
+        "Dot",
+        "Container",
+        "Textbox",
+        "Client Control Container",
+        "デフォルトレイアウト",
+        "ミニマップ",
+        "スキルエリア",
+        "チーム情報",
+        "キャラHPゲージ",
+        "スティック",
+        "創造物HPゲージ",
+        "退出ボタン",
+        "ボイス",
+        "オプションタブ",
+        "チャットボタン",
+        "ネットワークの状態",
+        "抵抗ボタン",
+        "ボイスチャットボタン",
+        "ボイスチャットヒントキュー",
+        "Client Control Container",
+        "Client Control Container",
+        "ExclusiveEleGroupHierarchyRoot",
+        "ClientUIRootHierarchyRoot",
+        "ClientUIPrototypeHierarchyRoot",
+        "Textbox",
+        "Container",
+        "Dot",
+        "コンテナノード",
+        "コンテナノード",
+        "コンテナノード"
+      ]
+    },
+    "node_graphs": {
+      "field": 10,
+      "name": "node_graphs",
+      "wire": "message",
+      "size": 26898,
+      "entries": [
+        {
+          "name": "SaveBridge",
+          "guid": 1073741825,
+          "type_id": 21001,
+          "graph": {
+            "nodes": [
+              {
+                "id": 1,
+                "type_id": 71,
+                "pos": [
+                  -1116.0,
+                  -368.0
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 2
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "type_id": 22,
+                "pos": [
+                  606.0,
+                  -385.0
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 7
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 7
+                    },
+                    "value_field": 110,
+                    "port_type": 8,
+                    "type5": 6
+                  }
+                ],
+                "ints": [
+                  7
+                ]
+              },
+              {
+                "id": 3,
+                "type_id": 73,
+                "pos": [
+                  -1202.0,
+                  -132.0
+                ]
+              },
+              {
+                "id": 4,
+                "type_id": 50,
+                "pos": [
+                  -817.0,
+                  -90.0
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "value": {
+                      "ref": "IssenSaveData"
+                    },
+                    "value_field": 105,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 22
+                    },
+                    "value_field": 110,
+                    "port_type": 26
+                  }
+                ],
+                "refs": [
+                  "IssenSaveData"
+                ],
+                "ints": [
+                  22
+                ]
+              },
+              {
+                "id": 5,
+                "type_id": 128,
+                "pos": [
+                  -226.0,
+                  56.0
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 26,
+                    "type5": 4
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  }
+                ],
+                "ints": [
+                  10,
+                  10
+                ]
+              },
+              {
+                "id": 6,
+                "type_id": 1610612750,
+                "pos": [
+                  269.0,
+                  133.0
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 25,
+                    "type5": 5
+                  }
+                ]
+              },
+              {
+                "id": 7,
+                "type_id": 22,
+                "pos": [
+                  1241.0,
+                  -383.0
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "type_id": 1610612738,
+                "pos": [
+                  -1336.0,
+                  394.0
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 13
+                  },
+                  {
+                    "from": {
+                      "kind": 5,
+                      "idx": null
+                    },
+                    "data_kind": 5,
+                    "signal_send": true
+                  }
+                ],
+                "flag9": 1
+              },
+              {
+                "id": 11,
+                "type_id": 1610612749,
+                "pos": [
+                  -780.0,
+                  731.0
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 8,
+                    "type5": 9
+                  }
+                ]
+              },
+              {
+                "id": 12,
+                "type_id": 169,
+                "pos": [
+                  -360.0,
+                  736.0
+                ],
+                "port_count": 101,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25,
+                    "type5": 11
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 3
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 3
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 5
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 5
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 6
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 6
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 7
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 7
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 8
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 8
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 9
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 9
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 10
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 10
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 11
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 11
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 12
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 12
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 13
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 13
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 14
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 14
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 15
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 15
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 16
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 16
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 17
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 17
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 18
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 18
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 19
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 19
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 20
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 20
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 21
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 21
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 22
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 22
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 23
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 23
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 24
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 24
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 25
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 25
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 26
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 26
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 27
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 27
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 28
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 28
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 29
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 29
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 30
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 30
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 31
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 31
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 32
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 32
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 33
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 33
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 34
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 34
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 35
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 35
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 36
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 36
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 37
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 37
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 38
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 38
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 39
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 39
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 40
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 40
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 41
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 41
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 42
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 42
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 43
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 43
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 44
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 44
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 45
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 45
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 46
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 46
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 47
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 47
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 48
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 48
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 49
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 49
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 50
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 50
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 51
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 51
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 52
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 52
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 53
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 53
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 54
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 54
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 55
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 55
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 56
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 56
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 57
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 57
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 58
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 58
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 59
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 59
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 60
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 60
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 61
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 61
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 62
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 62
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 63
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 63
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 64
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 64
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 65
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 65
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 66
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 66
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 67
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 67
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 68
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 68
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 69
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 69
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 70
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 70
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 71
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 71
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 72
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 72
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 73
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 73
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 74
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 74
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 75
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 75
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 76
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 76
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 77
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 77
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 78
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 78
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 79
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 79
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 80
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 80
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 81
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 81
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 82
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 82
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 83
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 83
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 84
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 84
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 85
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 85
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 86
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 86
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 87
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 87
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 88
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 88
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 89
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 89
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 90
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 90
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 91
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 91
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 92
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 92
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 93
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 93
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 94
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 94
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 95
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 95
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 96
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 96
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 97
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 97
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 98
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 98
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 99
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 99
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 100
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 100
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 25
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 10
+                    },
+                    "value_field": 110,
+                    "port_type": 26
+                  }
+                ],
+                "ints_summary": "10 ×101"
+              },
+              {
+                "id": 13,
+                "type_id": 22,
+                "pos": [
+                  168.0,
+                  385.0
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 14
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "value": {
+                      "ref": "IssenSaveData"
+                    },
+                    "value_field": 105,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 22
+                    },
+                    "value_field": 110,
+                    "port_type": 26,
+                    "type5": 12
+                  }
+                ],
+                "refs": [
+                  "IssenSaveData"
+                ],
+                "ints": [
+                  22
+                ]
+              },
+              {
+                "id": 14,
+                "type_id": 22,
+                "pos": [
+                  752.0,
+                  386.0
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 7
+                    },
+                    "value_field": 110,
+                    "port_type": 8,
+                    "type5": 9
+                  }
+                ],
+                "ints": [
+                  7
+                ]
+              }
+            ],
+            "variables_referenced": [
+              "IssenSaveData"
+            ],
+            "signals_referenced": [],
+            "node_count": 12
+          }
+        },
+        {
+          "name": "_GSTS_Issen",
+          "guid": 1073741826,
+          "type_id": 21001,
+          "graph": {
+            "nodes": [
+              {
+                "id": 1,
+                "type_id": 71,
+                "pos": [
+                  2.91,
+                  2.14
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 4
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "type_id": 18,
+                "pos": [
+                  505.56,
+                  252.0
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1
+                  }
+                ],
+                "ints": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "id": 3,
+                "type_id": 73,
+                "pos": [
+                  504.4,
+                  506.23
+                ]
+              },
+              {
+                "id": 4,
+                "type_id": 19,
+                "pos": [
+                  802.15,
+                  2.01
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 16,
+                    "type5": 2
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1,
+                    "type5": 3
+                  }
+                ],
+                "ints": [
+                  3
+                ]
+              },
+              {
+                "id": 5,
+                "type_id": 756,
+                "pos": [
+                  1309.92,
+                  255.03
+                ]
+              },
+              {
+                "id": 6,
+                "type_id": 22,
+                "pos": [
+                  1602.9,
+                  1.5
+                ],
+                "port_count": 5,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 8
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 2
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3,
+                    "type5": 5
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "data_kind": 6,
+                    "value": {
+                      "int": 1
+                    },
+                    "value_field": 106,
+                    "port_type": 4
+                  }
+                ]
+              },
+              {
+                "id": 7,
+                "type_id": 755,
+                "pos": [
+                  2100.03,
+                  256.75
+                ]
+              },
+              {
+                "id": 8,
+                "type_id": 22,
+                "pos": [
+                  2407.43,
+                  7.3
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 2
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 5,
+                    "port_type": 6
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3,
+                    "type5": 7
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "data_kind": 6,
+                    "value": {
+                      "int": 1
+                    },
+                    "value_field": 106,
+                    "port_type": 4
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "type_id": 1610612742,
+                "pos": [
+                  5.52,
+                  1109.39
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 11
+                  },
+                  {
+                    "from": {
+                      "kind": 5,
+                      "idx": null
+                    },
+                    "data_kind": 5,
+                    "signal_send": true
+                  }
+                ],
+                "flag9": 1
+              },
+              {
+                "id": 10,
+                "type_id": 169,
+                "pos": [
+                  505.57,
+                  1352.03
+                ],
+                "port_count": 102,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 3
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 3
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 4
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 5
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 5
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 6
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 6
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 7
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 7
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 8
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 8
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 9
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 9
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 10
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 10
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 11
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 11
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 12
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 12
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 13
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 13
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 14
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 14
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 15
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 15
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 16
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 16
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 17
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 17
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 18
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 18
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 19
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 19
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 20
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 20
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 21
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 21
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 22
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 22
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 23
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 23
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 24
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 24
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 25
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 25
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 26
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 26
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 27
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 27
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 28
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 28
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 29
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 29
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 30
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 30
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 31
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 31
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 32
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 32
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 33
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 33
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 34
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 34
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 35
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 35
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 36
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 36
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 37
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 37
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 38
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 38
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 39
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 39
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 40
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 40
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 41
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 41
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 42
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 42
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 43
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 43
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 44
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 44
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 45
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 45
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 46
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 46
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 47
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 47
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 48
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 48
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 49
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 49
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 50
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 50
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 51
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 51
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 52
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 52
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 53
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 53
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 54
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 54
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 55
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 55
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 56
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 56
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 57
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 57
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 58
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 58
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 59
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 59
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 60
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 60
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 61
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 61
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 62
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 62
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 63
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 63
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 64
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 64
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 65
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 65
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 66
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 66
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 67
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 67
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 68
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 68
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 69
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 69
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 70
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 70
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 71
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 71
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 72
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 72
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 73
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 73
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 74
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 74
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 75
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 75
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 76
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 76
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 77
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 77
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 78
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 78
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 79
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 79
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 80
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 80
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 81
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 81
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 82
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 82
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 83
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 83
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 84
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 84
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 85
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 85
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 86
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 86
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 87
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 87
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 88
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 88
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 89
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 89
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 90
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 90
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 91
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 91
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 92
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 92
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 93
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 93
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 94
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 94
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 95
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 95
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 96
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 96
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 97
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 97
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 98
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 98
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 99
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 99
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 100
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 100
+                    },
+                    "data_kind": 10000,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "port_type": 8
+                  }
+                ]
+              },
+              {
+                "id": 11,
+                "type_id": 761,
+                "pos": [
+                  807.68,
+                  1101.94
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 15
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 8,
+                    "type5": 10
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "port_type": 3,
+                    "type5": 9
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  }
+                ]
+              },
+              {
+                "id": 12,
+                "type_id": 18,
+                "pos": [
+                  1304.18,
+                  1354.32
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1
+                  },
+                  {
+                    "from": {
+                      "kind": 4,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 4,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1
+                  }
+                ],
+                "ints": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "id": 13,
+                "type_id": 750,
+                "pos": [
+                  1002.04,
+                  1600.25
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  }
+                ]
+              },
+              {
+                "id": 14,
+                "type_id": 75,
+                "pos": [
+                  1305.34,
+                  1605.11
+                ],
+                "port_count": 1,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 2,
+                    "type5": 13
+                  }
+                ]
+              },
+              {
+                "id": 15,
+                "type_id": 19,
+                "pos": [
+                  1605.06,
+                  1102.99
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 16
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 16,
+                    "type5": 12
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 10000,
+                    "value": {
+                      "int": 3
+                    },
+                    "value_field": 110,
+                    "port_type": 1,
+                    "type5": 14
+                  }
+                ],
+                "ints": [
+                  3
+                ]
+              },
+              {
+                "id": 16,
+                "type_id": 645,
+                "pos": [
+                  2400.9,
+                  1102.27
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 17
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 12
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "port_type": 3,
+                    "type5": 9
+                  }
+                ]
+              },
+              {
+                "id": 17,
+                "type_id": 645,
+                "pos": [
+                  3209.63,
+                  1102.88
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 18
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 12
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "port_type": 3,
+                    "type5": 9
+                  }
+                ]
+              },
+              {
+                "id": 18,
+                "type_id": 645,
+                "pos": [
+                  4000.12,
+                  1105.64
+                ],
+                "port_count": 4,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 19
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 12
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "port_type": 3,
+                    "type5": 9
+                  }
+                ]
+              },
+              {
+                "id": 19,
+                "type_id": 645,
+                "pos": [
+                  4800.48,
+                  1104.41
+                ],
+                "port_count": 3,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": null
+                    },
+                    "port_type": 1,
+                    "type5": 12
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 2,
+                    "port_type": 3
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 2
+                    },
+                    "port_type": 3,
+                    "type5": 9
+                  }
+                ]
+              },
+              {
+                "id": 20,
+                "type_id": 1610612746,
+                "pos": [
+                  9.95,
+                  2201.86
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 22
+                  },
+                  {
+                    "from": {
+                      "kind": 5,
+                      "idx": null
+                    },
+                    "data_kind": 5,
+                    "value": {
+                      "ref": "issen_exit"
+                    },
+                    "value_field": 105,
+                    "signal_send": true
+                  }
+                ],
+                "refs": [
+                  "issen_exit"
+                ],
+                "flag9": 1
+              },
+              {
+                "id": 21,
+                "type_id": 77,
+                "pos": [
+                  1020.73,
+                  2209.48
+                ]
+              },
+              {
+                "id": 22,
+                "type_id": 652,
+                "pos": [
+                  584.0,
+                  2207.0
+                ],
+                "port_count": 2,
+                "ports": [
+                  {
+                    "from": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "to": {
+                      "kind": 2,
+                      "idx": null
+                    },
+                    "type5": 21
+                  },
+                  {
+                    "from": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "to": {
+                      "kind": 3,
+                      "idx": 1
+                    },
+                    "data_kind": 6,
+                    "value": {
+                      "int": 4101
+                    },
+                    "value_field": 106,
+                    "port_type": 14
+                  }
+                ],
+                "ints": [
+                  4101
+                ]
+              }
+            ],
+            "variables_referenced": [
+              "issen_exit"
+            ],
+            "signals_referenced": [],
+            "node_count": 22
+          }
+        }
+      ],
+      "entry_count": 2
+    },
+    "preset_points": {
+      "field": 11,
+      "name": "preset_points",
+      "wire": "message",
+      "size": 408,
+      "entries": [],
+      "entry_count": 0
+    },
+    "tags": {
+      "field": 14,
+      "name": "tags",
+      "wire": "message",
+      "size": 78,
+      "entry_count": 0,
+      "entries": []
+    },
+    "configurations": {
+      "field": 15,
+      "name": "configurations",
+      "wire": "message",
+      "size": 8445,
+      "entries": [
+        {
+          "name": "バッグテンプレート",
+          "guid": 1119879169,
+          "type_id": 12,
+          "detail": {
+            "position": null,
+            "scale": null,
+            "components": [
+              {
+                "field": 4,
+                "tag": 42,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "環境設定",
+          "guid": 1186988033,
+          "type_id": 26,
+          "detail": {
+            "position": null,
+            "scale": null,
+            "components": [
+              {
+                "field": 4,
+                "tag": 70,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "カスタムジョブ",
+          "guid": 1090519041,
+          "type_id": 4,
+          "detail": {
+            "position": null,
+            "scale": null,
+            "components": [
+              {
+                "field": 4,
+                "tag": 8,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 9,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 10,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 11,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 25,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 26,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 27,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 101,
+                "desc": null
+              },
+              {
+                "field": 4,
+                "tag": 102,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "カスタム成長曲線",
+          "guid": 1094713345,
+          "type_id": 5,
+          "detail": {
+            "position": null,
+            "scale": null,
+            "components": [
+              {
+                "field": 4,
+                "tag": 12,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        },
+        {
+          "name": "移動禁止",
+          "guid": 1077936129,
+          "type_id": 1,
+          "detail": {
+            "position": null,
+            "scale": null,
+            "components": [
+              {
+                "field": 4,
+                "tag": 6,
+                "desc": null
+              }
+            ],
+            "bones": []
+          }
+        }
+      ],
+      "entry_count": 5
+    },
+    "unknown_F16": {
+      "field": 16,
+      "name": "unknown_F16",
+      "wire": "message",
+      "size": 83,
+      "raw_field_count": 1,
+      "string_sample": []
+    },
+    "cameras": {
+      "field": 18,
+      "name": "cameras",
+      "wire": "message",
+      "size": 89,
+      "entries": [],
+      "entry_count": 0
+    },
+    "unknown_F21": {
+      "field": 21,
+      "name": "unknown_F21",
+      "wire": "message",
+      "size": 7,
+      "raw_field_count": 1,
+      "string_sample": []
+    },
+    "unknown_F23": {
+      "field": 23,
+      "name": "unknown_F23",
+      "wire": "message",
+      "size": 7,
+      "raw_field_count": 2,
+      "string_sample": []
+    },
+    "unknown_F25": {
+      "field": 25,
+      "name": "unknown_F25",
+      "wire": "message",
+      "size": 221,
+      "raw_field_count": 3,
+      "string_sample": [
+        "デフォルトスコアグループ",
+        "デフォルトマスターアチーブメント",
+        "デフォルトアチーブメント",
+        "デフォルトランキング"
+      ]
+    },
+    "version_info": {
+      "field": 29,
+      "name": "version_info",
+      "wire": "message",
+      "size": 55,
+      "strings": [
+        "OSRELWin7.1.0",
+        "48145775",
+        "48652077",
+        "48511369",
+        "48533839"
+      ]
+    },
+    "unknown_F31": {
+      "field": 31,
+      "name": "unknown_F31",
+      "wire": "message",
+      "size": 120,
+      "raw_field_count": 2,
+      "string_sample": [
+        "IssenSaveData",
+        "プレイヤー1の一時データ"
+      ]
+    },
+    "unknown_F35": {
+      "field": 35,
+      "name": "unknown_F35",
+      "wire": "message",
+      "size": 4780,
+      "raw_field_count": 1,
+      "string_sample": [
+        "デフォルトアチーブメント",
+        "\n",
+        "デフォルトマスターアチーブメント",
+        "\n",
+        "グローバル",
+        "こんにちは！",
+        "初期オブジェクト陣営",
+        "初期プレイヤー陣営",
+        "初期創造物陣営",
+        "IssenSaveData"
+      ]
+    },
+    "globals_defs": {
+      "field": 36,
+      "name": "globals_defs",
+      "wire": "message",
+      "size": 80,
+      "entries": [],
+      "entry_count": 0
+    },
+    "unknown_F38": {
+      "field": 38,
+      "name": "unknown_F38",
+      "wire": "message",
+      "size": 4,
+      "raw_field_count": 2,
+      "string_sample": []
+    },
+    "player_uid": {
+      "field": 39,
+      "name": "player_uid",
+      "wire": "varint",
+      "size": 0,
+      "value": 801397766
+    },
+    "build_hash": {
+      "field": 40,
+      "name": "build_hash",
+      "wire": "varint",
+      "size": 0,
+      "value": 1792567076
+    },
+    "mode_flag": {
+      "field": 41,
+      "name": "mode_flag",
+      "wire": "varint",
+      "size": 0,
+      "value": 1
+    },
+    "game_version": {
+      "field": 43,
+      "name": "game_version",
+      "wire": "string",
+      "size": 0,
+      "value": "7.1.0"
+    },
+    "globals_b": {
+      "field": 46,
+      "name": "globals_b",
+      "wire": "message",
+      "size": 110,
+      "entry_count": 0,
+      "entries": []
+    },
+    "unknown_F50": {
+      "field": 50,
+      "name": "unknown_F50",
+      "wire": "message",
+      "size": 63570,
+      "raw_field_count": 2,
+      "string_sample": [
+        "Main.lua",
+        "-- 一閃 ISSEN — Miliastra Wonderland port of issen.h",
+        "TPL_DOT",
+        "TPL_RING",
+        "TPL_RECT",
+        "TPL_TEXT",
+        "TPL_GROUP",
+        "TPL_DOT",
+        "TPL_RING",
+        "TPL_RECT"
+      ]
+    },
+    "unknown_F52": {
+      "field": 52,
+      "name": "unknown_F52",
+      "wire": "varint",
+      "size": 0,
+      "value": 1073741834
+    },
+    "unknown_F53": {
+      "field": 53,
+      "name": "unknown_F53",
+      "wire": "varint",
+      "size": 0,
+      "value": 1792567076
+    }
+  }
+}

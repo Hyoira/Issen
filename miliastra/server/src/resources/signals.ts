@@ -3,6 +3,9 @@
 import { defineSignal } from 'genshin-ts/runtime/core'
 
 export const Signal = {
+  "issen_best": defineSignal("issen_best", [
+    ["score", "int"],
+  ]),
   "issen_exit": defineSignal("issen_exit", [
   ]),
   "issen_run": defineSignal("issen_run", [

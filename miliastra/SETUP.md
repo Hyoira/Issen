@@ -9,7 +9,7 @@
 ```
 [クライアント] miliastra/lua/Issen/Main.lua
    │ 読む: プレイヤーのカスタム変数 iss_ready / iss_save / iss_now / iss_tz
-   │ 送る: シグナル issen_save（Integer List）、issen_run（Integer × 6）
+   │ 送る: シグナル issen_save（Integer List）、issen_run（Integer × 7）
    ▼
 [サーバー]
    ├ SaveBridge（エディタで手組み）
@@ -27,8 +27,8 @@
 | 3 | 累計 XP | 12–14 | ミッション進捗 |
 | 4 | 累計撃破 | 15–17 | ミッション達成（0/1） |
 | 5 | プレイ回数 | 18 | 最長の連続日数 |
-| 6 | 最大コンボ | 19–24 | 予備 |
-| 7 | 選んだ色 | | |
+| 6 | 最大コンボ | 19 | 紙一重の累計回数 |
+| 7 | 選んだ色 | 20–24 | 予備 |
 | 8 | 連続日数 | | |
 | 9 | 最後に遊んだ日 | | |
 
@@ -55,7 +55,7 @@ UI の画像ライブラリから、**白（か白に近い色）** の次の3�
 | 103001〜103007 | 元素アイコン | タイトルの色選び（雷 103001／炎 103002／氷 103003／草 103004／岩 103005／水 103006／風 103007） |
 | 104002 | 四芒星のきらめき | 氷元素のヒットエフェクト |
 
-## 2. Client Control Template を5つ作る
+## 2. Client Control Template を6つ作る
 
 UI Control Group Library の Client Control Templates に作り、それぞれの **Template Index** を控えておきます。
 
@@ -66,6 +66,7 @@ UI Control Group Library の Client Control Templates に作り、それぞれ�
 | ISS_Rect | ImageControl | 画像 = Rect |
 | ISS_Text | TextBoxControl | 文字色は何でもよい（Lua が上書きする） |
 | ISS_Group | ContainerControl | 空のまま |
+| ISS_Btn | KeyHintControl（Button Hint） | 操作キーはLuaが設定 |
 
 位置・大きさ・アンカー・色は、すべて Lua が実行時に設定します。
 
@@ -97,6 +98,7 @@ UI Control Group Library の Client Control Templates に作り、それぞれ�
 | `TPL_RECT` | Client Control ID | ISS_Rect の Template Index |
 | `TPL_TEXT` | Client Control ID | ISS_Text の Template Index |
 | `TPL_GROUP` | Client Control ID | ISS_Group の Template Index |
+| `TPL_BTN` | Client Control ID | ISS_Btn の Template Index。コントローラーのボタン記号表示に使用 |
 | `TPL_INPUT` | Client Control ID | （任意）`Input` を置かずテンプレートから作る場合のみ |
 
 効果音は Integer 型の変数で、音声ライブラリの ID を入れます。未設定や 0 の音は鳴りません。
@@ -125,7 +127,8 @@ Web 版はコンボに合わせて音程を合成していました。幻境で�
 | シグナル名 | パラメータ |
 | --- | --- |
 | `issen_save` | `v`: Integer List |
-| `issen_run` | `score`, `best`, `maxCombo`, `maxStreak`, `level`, `kills`: すべて Integer |
+| `issen_best` | `score`: Integer（ベストスコア更新時のみ） |
+| `issen_run` | `score`, `best`, `maxCombo`, `maxStreak`, `level`, `kills`, `closeCalls`: すべて Integer |
 | `issen_exit` | なし（タイトルの「ステージを終了」） |
 
 ## 6. プレイヤーのカスタム変数を作る
@@ -145,7 +148,7 @@ Web 版はコンボに合わせて音程を合成していました。幻境で�
 2. In-game Save テンプレートを作り、データ項目を1つ追加します。名前は例として `IssenSaveData`、構造体は `IssenSave`、**最大長 1** にします。
 3. そのテンプレートの In-game Save スイッチをオンにします。保存項目の表示名と、ノードから参照する内部変数名は異なります。対象ステージ `1073741834` の内部名は `1_chip_1` です（保存できている `1073741829` でも同じ）。Get / Set Custom Variable では表示名 `IssenSaveData` ではなく、この内部名を指定してください。別ステージでは保存項目を選択して実際の内部名を確認します。
 
-公開後に構造を変えるときは、追加だけにしてください。メンバーの削除や型の変更をすると、プレイヤーの保存データがリセットされます。保存データ内の位置 19〜24 は、将来の追加用に空けてあります。
+公開後に構造を変えるときは、追加だけにしてください。メンバーの削除や型の変更をすると、プレイヤーの保存データがリセットされます。保存データ内の位置 20〜24 は、将来の追加用に空けてあります。位置 19 は紙一重の累計回数で、未記録の旧データは 0 回として読み込みます。
 
 ## 8. SaveBridge を手で組む
 
@@ -183,14 +186,19 @@ Monitor Signal（issen_save）→ v
 ## 9. ランキングと実績を作る（Manage Peripheral System）
 
 - **Leaderboard**: 「ベストスコア」（整数、大きい方が上位）を1つ作ります。
-- **Achievements**: 進捗カウント型で4つ作ります。しきい値は自由です。
+  - プレイ終了時に自己ベストを更新した場合のみ、`issen_best` で新しいスコアを記録します。同点・未更新・オフライン時は送信しません。
+- **Achievements**: 次の ID で進捗カウント型の実績を6つ作ります。
 
-| 実績 | 送られる値 | 例 |
-| --- | --- | --- |
-| 撃破 | 累計撃破数 | 1000 体 |
-| コンボ | 最大コンボ | 50 |
-| 連続 | 最長の連続日数 | 7 日 |
-| レベル | レベル | Lv 10 |
+| ID | 実績 | 送られる値 | 達成条件 |
+| --- | --- | --- | --- |
+| 2 | 撃破 | 累計撃破数 | 例: 1000 体 |
+| 3 | コンボ | 最大コンボ | 例: 50 |
+| 4 | 連続プレイ | 最長の連続日数 | 例: 7 日 |
+| 5 | レベル | レベル | 例: Lv 10 |
+| 6 | 初プレイ | プレイ終了時に 1 | 1 |
+| 7 | 紙一重を累計100回起こす | 紙一重の累計回数 | 100 回 |
+
+実績はプレイ終了時に更新します。紙一重の回数は終了したプレイをまたいで累積し、保存データの位置 19 に記録します。中断してタイトルに戻ったプレイは、既存の撃破数と同じく累計に含めません。旧データに記録のない過去の回数は復元しません。`issen_run` の末尾には `closeCalls`（Integer）を追加してください。
 
 送る値はどれも増えるだけの累計なので、実績の進捗が下がることはありません。
 
@@ -266,7 +274,17 @@ Sandbox Log の Client Scripts を見ながら遊んでください。Lua の問
 
 ボタンは幻境の既定のキー割り当てに合わせています（A = Jump、B = Normal Attack、X = Interact、RB = Sprint、RT = Skill 1）。
 
+上の操作表はXbox表記の例です。ゲーム内の記号は `TPL_BTN` のKey Hint Controlで表示し、操作名は翻訳テキストを使います。続ける・斬る・再挑戦は `JumpKey`、中断・タイトルへ・終了は `NormalAttackKey`、元素は `SprintKey`、音は `InteractKey` を指定します。Xbox／PlayStationそれぞれの記号表示はTest Playで確認してください。追加文言 `issen.action.*` を使うため、更新した `translation-lua.csv` をScript Text Variablesに再インポートしてください。
+
+`TPL_BTN` 未設定の環境では記号を省略し、操作名だけを表示します（Playgroundの既成テンプレートIDは未確認のため補完しません）。
+
 中断からタイトルへ戻ったプレイは記録しません（ミッションの進捗や XP も入りません）。
+
+## 難易度の上昇
+
+プレイ開始時のレベルに応じて、難易度用の時間を `(レベル - 1) × 0.5秒` 進めて開始します。上乗せは最大10秒（Lv21以降）です。Lv1は従来どおり、Lv10は4.5秒、Lv20は9.5秒進んだ出現頻度・敵種・速度から始まります。プレイ途中のレベル変更では難易度を飛ばさず、次のプレイに適用します。
+
+敵の速度上昇は難易度用の時間が300秒になるまで続きます。上昇率は従来のままなので、2分以降は従来より速くなります。出現間隔の下限は従来どおり基準0.32秒（乱数の揺らぎあり）です。実プレイ時間は別に計測し、中断やスローの扱いは従来と同じです。
 
 ## 色と元素
 

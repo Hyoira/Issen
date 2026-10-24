@@ -5,6 +5,11 @@ const fs = require('fs');
 const path = require('path');
 
 const EN = {
+  'action.slash': 'Slash',
+  'action.aim': 'L-stick to aim',
+  'action.color': 'Element',
+  'action.sound': 'Sound',
+  'action.again': 'Play again',
   'color.ink': 'Ink',
   'element.pyro': 'Pyro',
   'element.hydro': 'Hydro',
@@ -83,7 +88,7 @@ if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 
 const cell = (v) => (/[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
 const rows = [['テキストマッピングID', '翻訳が必要かどうか', '日本語', '英語']];
-for (const [key, ja] of sources) rows.push([`issen.${key}`, 'true', ja, EN[key]]);
+for (const [key, ja] of sources) rows.push([`issen.${key}`, 'TRUE', ja, EN[key]]);
 const out = path.join(root, 'translation-lua.csv');
 fs.writeFileSync(out, '﻿' + rows.map((r) => r.map(cell).join(',')).join('\r\n') + '\r\n');
 console.log(`wrote ${sources.length} rows to ${out}`);

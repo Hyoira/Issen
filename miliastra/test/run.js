@@ -57,6 +57,7 @@ local TYPE_FIELDS = {
   Image = { imageSource=1, imageId=1, imageColor=1, imageType=1, enableMask=1, enableSoftEdge=1, fillAmount=1, fillType=1 },
   TextBox = { text=1, fontSize=1, fontColor=1, bgColor=1, enableOutline=1, outlineColor=1, horizontalAlignment=1, verticalAlignment=1, adaptiveFontSize=1, minimumFontSize=1 },
   Cursor = { raycastTarget=1 },
+  KeyHint = { keyboardKeyCode=1, controllerKeyCode=1 },
 }
 local nextId = 1000
 CALLS = 0
@@ -99,14 +100,20 @@ function newControl(kind, name)
       if not (BASE_FIELDS[k] or (TYPE_FIELDS[kind] and TYPE_FIELDS[kind][k])) then error("cannot set " .. kind .. "." .. tostring(k), 2) end
       if k == "fontSize" then num(v, "fontSize"); assert(math.type(v) == "integer", "fontSize must be integer") end
       if k == "text" then assert(type(v) == "string", "text must be string"); SHOWN[v] = true end
+      if k == "controllerKeyCode" then
+        assert(type(v) == "string" and v:find("^ControllerKeyCode%."), "controller key enum")
+        HINT_KEYS[v] = true
+      end
+      if k == "keyboardKeyCode" then assert(v == "KeyboardKeyCode.None", "controller hints must not show keyboard keys") end
       CALLS = CALLS + 1
       rawset(t, "_f_" .. k, v)
     end })
 end
 KEYS, CURSOR, SHOWN = {}, {}, {}
 IMGIDS = {}
+HINT_KEYS = {}
 KNOWN_IMG = { [104002] = 1, [103001] = 1, [103002] = 1, [103003] = 1, [103004] = 1, [103005] = 1, [103006] = 1, [103007] = 1 }
-local TPLS = { [101] = "Image", [102] = "Image", [103] = "Image", [104] = "TextBox", [105] = "Container" }
+local TPLS = { [101] = "Image", [102] = "Image", [103] = "Image", [104] = "TextBox", [105] = "Container", [106] = "KeyHint" }
 INSTANCES = 0
 local root = newControl("Container", "Root")
 root._children.Input = newControl("Cursor", "Input")
@@ -136,7 +143,7 @@ game = strict("game", {
   GetDevice = function() return DEVICE end,
   GetControllerLeftStickAxis = function() return STICK[1], STICK[2] end,
 })
-local params = { TPL_DOT = 101, TPL_RING = 102, TPL_RECT = 103, TPL_TEXT = 104, TPL_GROUP = 105, SFX_DASH = 7, SFX_KILL1 = 8, SFX_KILL3 = 9 }
+local params = { TPL_DOT = 101, TPL_RING = 102, TPL_RECT = 103, TPL_TEXT = 104, TPL_GROUP = 105, TPL_BTN = 106, SFX_DASH = 7, SFX_KILL1 = 8, SFX_KILL3 = 9 }
 HANDLERS = {}
 script = setmetatable({ object = root }, { __index = {
   GetParam = function(_, n) return params[n] end,
@@ -164,6 +171,31 @@ local function get(name) local v = upval(OnUpdate, name); return v end
 VARS.iss_ready = 0
 OnStart()
 assert(UPDATE == true, "EnableUpdate not called")
+-- Level changes affect only the next run; elapsed play time still starts at zero.
+do
+  local save, makeRun = get("save"), get("newRun")
+  local xp = save.xp
+  for _, case in ipairs({ { 0, 0 }, { 120, 0.5 }, { 480, 1.5 }, { 100000, 10 } }) do
+    save.xp = case[1]
+    local r = makeRun()
+    assert(r.time == 0 and r.difficultyTime == case[2], "incorrect level difficulty offset")
+  end
+  save.xp = xp
+  local spawn, r, enemies = get("spawnEnemy"), get("run"), get("E")
+  local originalTime, n = r.difficultyTime, #enemies
+  local function speedAt(t)
+    r.difficultyTime = t
+    math.randomseed(1234)
+    spawn("ring", -100, -100)
+    local speed = enemies[#enemies].spd
+    table.remove(enemies)
+    return speed
+  end
+  local s120, s300, s600 = speedAt(120), speedAt(300), speedAt(600)
+  assert(s300 > s120 and s300 == s600, "enemy speed must increase until 300 seconds and then stop")
+  assert(#enemies == n, "difficulty test left enemies behind")
+  r.difficultyTime = originalTime
+end
 local overN = 0
 local stats = { states = {}, runs = 0, maxScore = 0, maxCombo = 0, kills = 0, padDashes = 0 }
 local lastState
@@ -246,6 +278,13 @@ for f = 1, frames do
   OnUpdate(1 / 60)
 end
 local sigCount = {}
+if frames >= 1000 then
+  assert(HINT_KEYS["ControllerKeyCode.JumpKey"], "missing confirm/slash hint")
+  assert(HINT_KEYS["ControllerKeyCode.NormalAttackKey"], "missing back/pause hint")
+  for s in pairs(SHOWN) do
+    assert(not s:find("^A ") and not s:find("^B ") and not s:find("RB "), "hard-coded controller symbol: " .. s)
+  end
+end
 for _, s in ipairs(SIGNALS) do sigCount[s.name] = (sigCount[s.name] or 0) + 1 end
 local st = {}
 for k, v in pairs(stats.states) do st[#st + 1] = k .. "=" .. v end
@@ -276,6 +315,59 @@ io.write(string.format("distinct texts shown=%d, with Japanese=%d, GetText calls
 if EN_TEXT_N then io.write("  " .. table.concat(jp, " / ") .. "\\n") end
 local ms = get("missions")
 for i, m in ipairs(ms) do io.write("mission " .. i .. ": " .. m.text .. "\\n") end
+
+-- Leaderboard submissions follow personal-best updates, including ties and offline play.
+do
+  local save, r, finish = get("save"), get("run"), get("finishRun")
+  for _, case in ipairs({ { 0, 0 }, { 120, 119 }, { 120, 120 }, { 120, 121 }, { 121, 120 }, { 121, 122 } }) do
+    save.best, r.score = case[1], case[2]
+    local first, count = #SIGNALS + 1, 0
+    finish()
+    for i = first, #SIGNALS do
+      local s = SIGNALS[i]
+      if s.name == "issen_best" then
+        count = count + 1
+        assert(#s.params == 1 and s.params[1] == case[2], "incorrect leaderboard score")
+      end
+    end
+    local improved = case[2] > case[1] and case[2] > 0
+    assert(save.best == math.max(case[1], case[2]), "incorrect personal best")
+    assert(count == ((improved and get("online")) and 1 or 0), "incorrect leaderboard submission count")
+  end
+  io.write("leaderboard: zero, lower, tie, new best, and repeated runs passed\\n")
+end
+
+-- Lifetime close calls survive saves and accumulate across completed runs.
+do
+  local save, r, finish = get("save"), get("run"), get("finishRun")
+  local pack, unpack = get("packSave"), upval(OnStart, "unpackSave")
+  local old = { 1, 120, 9200, 10, 2, 5, 0, 2, 20380, 0, 20380, 0, 0, 0, 0, 0, 0, 2 }
+  assert(unpack(old).closeCalls == 0 and unpack(old).best == 120, "legacy save migration failed")
+  old[19] = 0
+  assert(unpack(old).closeCalls == 0, "reserved zero slot migration failed")
+  save.closeCalls = 0
+  local total = 0
+  for _, count in ipairs({ 60, 39, 1, 0, 5 }) do
+    r.close = count
+    local first = #SIGNALS + 1
+    finish()
+    total = total + count
+    assert(save.closeCalls == total, "close calls did not accumulate")
+    local packed = pack()
+    assert(#packed == 24 and packed[19] == total, "incorrect close-call save slot")
+    assert(unpack(packed).closeCalls == total, "close-call save round trip failed")
+    local runs = 0
+    for i = first, #SIGNALS do
+      local s = SIGNALS[i]
+      if s.name == "issen_run" then
+        runs = runs + 1
+        assert(#s.params == 7 and s.params[6] == save.kills and s.params[7] == total, "incorrect achievement payload")
+      end
+    end
+    assert(runs == (get("online") and 1 or 0), "incorrect achievement submission count")
+  end
+  io.write("achievements: legacy saves, cumulative close calls at 99/100/105, and payload passed\\n")
+end
 `;
 
 const L = lauxlib.luaL_newstate();

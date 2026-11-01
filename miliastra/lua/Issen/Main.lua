@@ -617,10 +617,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
     save.maxCombo = max(save.maxCombo, run.maxCombo)
     local prevBest = save.best
     local newBest = run.score > prevBest and run.score > 0
-    if newBest then
-      save.best = run.score
-      sendSignal("issen_best", { save.best })
-    end
+    if newBest then save.best = run.score end
     local newDone = {}
     for _, i in ipairs(run.newDone) do newDone[#newDone + 1] = i end
     for i = 1, 3 do
@@ -639,6 +636,7 @@ local acc, toast, wave, rr, liveVal, dashInput, restart, goTitle, setPaused, aba
       if c.lv > lv0 and c.lv <= lv1 then save.color = i - 1; unlocked = c end
     end
     persist()
+    sendSignal("issen_best", { save.best })
     -- Achievements only ever go up, so send lifetime values.
     sendSignal("issen_run", { run.score, save.best, save.maxCombo, save.maxStreak, lv1, save.kills, save.closeCalls })
     res = { score = run.score, prevBest = prevBest, newBest = newBest, maxCombo = run.maxCombo, kills = run.kills, maxMulti = run.maxMulti,

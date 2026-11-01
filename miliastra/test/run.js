@@ -316,7 +316,7 @@ if EN_TEXT_N then io.write("  " .. table.concat(jp, " / ") .. "\\n") end
 local ms = get("missions")
 for i, m in ipairs(ms) do io.write("mission " .. i .. ": " .. m.text .. "\\n") end
 
--- Leaderboard submissions follow personal-best updates, including ties and offline play.
+-- Every completed run submits the saved best, including records from before leaderboards.
 do
   local save, r, finish = get("save"), get("run"), get("finishRun")
   for _, case in ipairs({ { 0, 0 }, { 120, 119 }, { 120, 120 }, { 120, 121 }, { 121, 120 }, { 121, 122 } }) do
@@ -327,12 +327,11 @@ do
       local s = SIGNALS[i]
       if s.name == "issen_best" then
         count = count + 1
-        assert(#s.params == 1 and s.params[1] == case[2], "incorrect leaderboard score")
+        assert(#s.params == 1 and s.params[1] == math.max(case[1], case[2]), "incorrect leaderboard score")
       end
     end
-    local improved = case[2] > case[1] and case[2] > 0
     assert(save.best == math.max(case[1], case[2]), "incorrect personal best")
-    assert(count == ((improved and get("online")) and 1 or 0), "incorrect leaderboard submission count")
+    assert(count == (get("online") and 1 or 0), "incorrect leaderboard submission count")
   end
   io.write("leaderboard: zero, lower, tie, new best, and repeated runs passed\\n")
 end

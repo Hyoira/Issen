@@ -127,7 +127,7 @@ Web 版はコンボに合わせて音程を合成していました。幻境で�
 | シグナル名 | パラメータ |
 | --- | --- |
 | `issen_save` | `v`: Integer List |
-| `issen_best` | `score`: Integer（ベストスコア更新時のみ） |
+| `issen_best` | `score`: Integer（プレイ終了ごとの保存済みベストスコア） |
 | `issen_run` | `score`, `best`, `maxCombo`, `maxStreak`, `level`, `kills`, `closeCalls`: すべて Integer |
 | `issen_exit` | なし（タイトルの「ステージを終了」） |
 
@@ -186,7 +186,7 @@ Monitor Signal（issen_save）→ v
 ## 9. ランキングと実績を作る（Manage Peripheral System）
 
 - **Leaderboard**: 「ベストスコア」（整数、大きい方が上位）を1つ作ります。
-  - プレイ終了時に自己ベストを更新した場合のみ、`issen_best` で新しいスコアを記録します。同点・未更新・オフライン時は送信しません。
+  - ランキングの序号は **1** です。プレイ終了のたびに、`issen_best` で保存済みベストスコアを記録します。同点・未更新でも送るため、ランキング導入前のベストも次のプレイ終了時に登録されます。オフライン時は送信しません。
 - **Achievements**: 次の ID で進捗カウント型の実績を6つ作ります。
 
 | ID | 実績 | 送られる値 | 達成条件 |
